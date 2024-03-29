@@ -1,7 +1,5 @@
 package com.franze.playground
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
 
     // Returns a list in a mixed order in which only elements of 1-length are contained.
