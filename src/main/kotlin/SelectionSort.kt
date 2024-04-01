@@ -15,23 +15,23 @@ class SelectionSort : SortingAlgorithm{
 
     override fun sort(list: MutableList<Int>): MutableList<Int> {
         var unsortedIndex: Int = 0
-        var indexOfMinValue: Int = 0
-        var temp: Int
+        var smallestValueIndex: Int = 0
+        var cacheForSwapping: Int
 
         while(unsortedIndex <= (list.size - 1)){
 
             for (i in unsortedIndex until list.size ){
 
-                if(list[indexOfMinValue] > list[i]){
-                    indexOfMinValue = i
+                if(list[smallestValueIndex] > list[i]){
+                    smallestValueIndex = i
                 }
             }
-            temp = list[unsortedIndex]
-            list[unsortedIndex] = list[indexOfMinValue]
-            list[indexOfMinValue] = temp
+            cacheForSwapping = list[unsortedIndex]
+            list[unsortedIndex] = list[smallestValueIndex]
+            list[smallestValueIndex] = cacheForSwapping
 
             unsortedIndex++
-            indexOfMinValue = unsortedIndex
+            smallestValueIndex = unsortedIndex
         }
 
         return list
