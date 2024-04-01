@@ -2,8 +2,8 @@ package com.franze.playground
 /**
  * Interface defining a sorting algorithm.
  *
- * Implementations of this interface should provide a method to sort a given list of integers
- * in ascending order.
+ * Implementations of this interface should provide a method to sort
+ * a given list of comparable Numbers in ascending order.
  *
  * @author Daniel Franze
  * @version 1.0
@@ -11,10 +11,12 @@ package com.franze.playground
  */
 interface SortingAlgorithm {
     /**
-     * Sorts a given list of integers in ascending order.
+     * Sorts a given list of Numbers in ascending order.
+     * The elements of the list must be of a type
+     * that implements both Number and Comparable.
      *
-     * @param list The list of integers to be sorted.
-     * @return The sorted list of integers.
+     * @param list The list of comparable Numbers to be sorted.
+     * @return The sorted list of comparable Numbers.
      */
-    fun sort(list: MutableList<Int>): MutableList<Int>
+    fun <T> sort(list: MutableList<T>): MutableList<T> where T: Number, T : Comparable<T>
 }

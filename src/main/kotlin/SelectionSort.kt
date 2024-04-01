@@ -13,10 +13,10 @@ package com.franze.playground
  */
 class SelectionSort : SortingAlgorithm{
 
-    override fun sort(list: MutableList<Int>): MutableList<Int> {
+    override fun <T> sort(list: MutableList<T>): MutableList<T> where T: Number, T : Comparable<T> {
         var unsortedIndex: Int = 0
         var smallestValueIndex: Int = 0
-        var cacheForSwapping: Int
+        var cacheForSwapping: T
 
         while(unsortedIndex <= (list.size - 1)){
 

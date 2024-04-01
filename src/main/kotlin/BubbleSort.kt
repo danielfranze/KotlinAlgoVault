@@ -12,7 +12,7 @@ package com.franze.playground
  * @since 2024-03-29
  */
 class BubbleSort : SortingAlgorithm{
-    override fun sort(list: MutableList<Int>): MutableList<Int> {
+    override fun <T> sort(list: MutableList<T>): MutableList<T> where T: Number, T : Comparable<T> {
 
         var i: Int = list.size - 1
         var swap: Boolean = true // to abort the algorithm if no value was swapped in an iteration
@@ -22,7 +22,7 @@ class BubbleSort : SortingAlgorithm{
             for (j in 0 until i){
                 // swap the values if j is greater than j+1
                 if(j+1 <= i && list.elementAt(j) > list.elementAt(j+1)){
-                    val valueOfFirstElement: Int = list.elementAt(j)
+                    val valueOfFirstElement: T = list.elementAt(j)
                     list[j] = list.elementAt(j+1)
                     list[j+1] = valueOfFirstElement
                     swap = true
