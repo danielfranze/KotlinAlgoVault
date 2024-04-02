@@ -1,4 +1,5 @@
-package com.franze.playground
+package com.franze.playground.algorithm
+
 /**
  * Interface defining a sorting algorithm.
  *
@@ -10,13 +11,14 @@ package com.franze.playground
  * @since 2024-03-29
  */
 interface SortingAlgorithm {
+
     /**
      * Sorts a given list of Numbers in ascending order.
      * The elements of the list must be of a type
      * that implements both Number and Comparable.
      *
-     * @param list The list of comparable Numbers to be sorted.
+     * @param unsortedList The list of comparable Numbers to be sorted.
      * @return The sorted list of comparable Numbers.
      */
-    fun <T> sort(list: MutableList<T>): MutableList<T> where T: Number, T : Comparable<T>
+    fun <T> sort(unsortedList: List<T>): MutableList<T> where T : Number, T : Comparable<T>
 }

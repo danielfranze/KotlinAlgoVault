@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "1.9.23"
 }
 
-group = "com.franzesoftwaresolutions.playground"
+group = "com.franze.playground.algorithm"
 version = "1.0-SNAPSHOT"
 
 repositories {

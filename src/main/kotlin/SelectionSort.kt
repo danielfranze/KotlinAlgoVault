@@ -1,6 +1,9 @@
-package com.franze.playground
+package com.franze.playground.algorithm
+
+import com.franze.playground.algorithm.util.swap
+
 /**
- * An example implementation of the Selectionsort algorithm
+ * An example implementation of the SelectionSort algorithm
  *
  * time complexity
  * best case: O(n²)
@@ -11,24 +14,22 @@ package com.franze.playground
  * @version 1.0
  * @since 2024-03-31
  */
-class SelectionSort : SortingAlgorithm{
+class SelectionSort : SortingAlgorithm {
 
-    override fun <T> sort(list: MutableList<T>): MutableList<T> where T: Number, T : Comparable<T> {
-        var unsortedIndex: Int = 0
-        var smallestValueIndex: Int = 0
-        var cacheForSwapping: T
+    override fun <T> sort(unsortedList: List<T>): MutableList<T> where T : Number, T : Comparable<T> {
+        val list = unsortedList.toMutableList() // generate a depth copy
 
-        while(unsortedIndex <= (list.size - 1)){
+        var unsortedIndex = 0
+        var smallestValueIndex = 0
 
-            for (i in unsortedIndex until list.size ){
-
-                if(list[smallestValueIndex] > list[i]){
+        while (unsortedIndex <= (list.size - 1)) {
+            // search for the element with the lowest value from the unsorted range
+            for (i in unsortedIndex until list.size) {
+                if (list[smallestValueIndex] > list[i]) {
                     smallestValueIndex = i
                 }
             }
-            cacheForSwapping = list[unsortedIndex]
-            list[unsortedIndex] = list[smallestValueIndex]
-            list[smallestValueIndex] = cacheForSwapping
+            list.swap(unsortedIndex, smallestValueIndex)
 
             unsortedIndex++
             smallestValueIndex = unsortedIndex
