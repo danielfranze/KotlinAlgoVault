@@ -1,6 +1,4 @@
 import com.franze.playground.algorithm.*
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class TestCases {
@@ -16,8 +14,8 @@ class TestCases {
     }
 
     @Test
-    fun testQuicksort() {
-        SortingAlgorithmTester(Quicksort()).testSort()
+    fun testQuickSort() {
+        SortingAlgorithmTester(QuickSort()).testSort()
     }
 
     @Test

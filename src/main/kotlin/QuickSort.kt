@@ -3,7 +3,7 @@ package com.franze.playground.algorithm
 import com.franze.playground.algorithm.util.swap
 
 /**
- * An example implementation of the Quicksort algorithm
+ * An example implementation of the QuickSort algorithm
  *
  * time complexity
  * best case: O(n log n)
@@ -14,7 +14,7 @@ import com.franze.playground.algorithm.util.swap
  * @version 2.0
  * @since 2024-03-30
  */
-class Quicksort : SortingAlgorithm {
+class QuickSort : SortingAlgorithm {
 
     override fun <T> sort(unsortedList: List<T>): MutableList<T> where T : Number, T : Comparable<T> {
         val list = unsortedList.toMutableList() // generate a depth copy
@@ -51,7 +51,7 @@ class Quicksort : SortingAlgorithm {
 
         var sortedList: List<T> = mutableListOf<T>(list[pivotIndex])
 
-        // Split the list into a left and a right side, where the pivot element is in the middle
+        // split the list into a left and a right side, where the pivot element is in the middle
         val leftSide = list.slice(0..pivotIndex - 1)
         val rightSide = list.slice(pivotIndex + 1..list.size - 1)
 
@@ -60,7 +60,7 @@ class Quicksort : SortingAlgorithm {
             sortedList = sort(leftSide).plus(sortedList)
         }
 
-        //continue with the algorithm on the right side
+        // continue with the algorithm on the right side
         if (rightSide.isNotEmpty()) {
             sortedList = sortedList.plus(sort(rightSide))
         }
