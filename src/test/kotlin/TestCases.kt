@@ -14,6 +14,11 @@ class TestCases {
     }
 
     @Test
+    fun testMergeSort() {
+        SortingAlgorithmTester(SelectionSort()).testSort()
+    }
+
+    @Test
     fun testQuickSort() {
         SortingAlgorithmTester(QuickSort()).testSort()
     }
