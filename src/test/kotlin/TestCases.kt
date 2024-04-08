@@ -9,6 +9,11 @@ class TestCases {
     }
 
     @Test
+    fun testCountingSort() {
+        SortingAlgorithmTester(CountingSort()).testSort()
+    }
+
+    @Test
     fun testInsertionSort() {
         SortingAlgorithmTester(InsertionSort()).testSort()
     }
