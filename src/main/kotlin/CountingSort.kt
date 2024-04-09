@@ -27,6 +27,7 @@ class CountingSort : SortingAlgorithm {
             is Byte -> value + 1
             else -> throw IllegalArgumentException("Unsupported type: $value")
         }
+        @Suppress("UNCHECKED_CAST")
         return newValue as T
     }
 
@@ -46,6 +47,7 @@ class CountingSort : SortingAlgorithm {
 
         var i: T = minValue
         while (i <= maxValue) {
+            @Suppress("UNCHECKED_CAST")
             countingList.addLast(0 as T)
             i = incrementValue(i)
         }
@@ -55,6 +57,8 @@ class CountingSort : SortingAlgorithm {
 
     override fun <T> sort(unsortedList: List<T>): MutableList<T> where T : Number, T : Comparable<T> {
         val list = unsortedList.toMutableList() // generate a depth copy
+
+        @Suppress("UNCHECKED_CAST")
         val sortedList = MutableList(list.size) { 0 as T }
         val countingList = createCountingList(list)
 
@@ -64,8 +68,10 @@ class CountingSort : SortingAlgorithm {
 
         for (i in 0 until countingList.size) {
             if (i > 0) {
+                @Suppress("UNCHECKED_CAST")
                 countingList[i] = (countingList[i].toInt() + countingList[i - 1].toInt()) as T
             } else {
+                @Suppress("UNCHECKED_CAST")
                 countingList[i] = (0 + countingList[i].toInt()) as T
             }
 
