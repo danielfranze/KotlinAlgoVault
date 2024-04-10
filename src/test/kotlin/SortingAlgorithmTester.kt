@@ -29,5 +29,17 @@ class SortingAlgorithmTester(private val sortingAlgorithm: SortingAlgorithm) {
         assertEquals(inputDoubleList.size, resultDoubleList.size)
         assertEquals(resultDoubleList.toSet().size, resultDoubleList.size)
 
+
+        // Test Lists where numbers can occur several times
+        val inputListMultiple = mutableListOf(12, 14, 15, 6, 19, 1, 18, 3, 2, 10, 6, 13, 20, 4, 16, 8, 7, 3)
+        val targetListMultiple = mutableListOf(1, 2, 3, 3, 4, 6, 6, 7, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20)
+        val resultListMultiple = sortingAlgorithm.sort(inputListMultiple.toMutableList())
+
+        // Test Lists of Integer
+        assertEquals(inputListMultiple, mutableListOf(12, 14, 15, 6, 19, 1, 18, 3, 2, 10, 6, 13, 20, 4, 16, 8, 7, 3))
+        assertEquals(targetListMultiple, resultListMultiple)
+        assertTrue(resultListMultiple == resultListMultiple.sorted())
+        assertEquals(inputListMultiple.size, resultListMultiple.size)
+
     }
 }
