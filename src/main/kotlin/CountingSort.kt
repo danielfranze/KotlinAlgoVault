@@ -74,15 +74,15 @@ class CountingSort : SortingAlgorithm {
                 @Suppress("UNCHECKED_CAST")
                 countingList[i] = (0 + countingList[i].toInt()) as T
             }
-
         }
 
         for (i in list.size - 1 downTo 0) {
             sortedList[countingList[list[i].toInt() - 1].toInt() - 1] = list[i]
-
-            //TODO("Add function to support lists that contain the same numbers multiple times")
+            @Suppress("UNCHECKED_CAST")
+            countingList[list[i].toInt() - 1] = (countingList[list[i].toInt() - 1].toInt() - 1) as T
         }
 
+        println(sortedList.toString())
         return sortedList
     }
 }
