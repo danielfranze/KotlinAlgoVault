@@ -51,7 +51,6 @@ class CountingSort : SortingAlgorithm {
             countingList.addLast(0 as T)
             i = incrementValue(i)
         }
-
         return countingList
     }
 
@@ -81,8 +80,6 @@ class CountingSort : SortingAlgorithm {
             @Suppress("UNCHECKED_CAST")
             countingList[list[i].toInt() - 1] = (countingList[list[i].toInt() - 1].toInt() - 1) as T
         }
-
-        println(sortedList.toString())
         return sortedList
     }
 }
